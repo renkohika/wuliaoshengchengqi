@@ -149,7 +149,6 @@ export const BORDER_OPTIONS: BorderOption[] = [
   { id: 'img-scallop-cream', label: '奶黄花边', svg: '', imageUrl: '/borders/3.png' },
   { id: 'img-scallop-mint', label: '薄荷花边', svg: '', imageUrl: '/borders/4.png' },
   { id: 'img-heart-yellow', label: '黄心蕾丝', svg: '', imageUrl: '/borders/5.png' },
-  { id: 'img-heart-blue', label: '蓝心蕾丝', svg: '', imageUrl: '/borders/8.jpg' },
 ]
 
 export const DECORATION_OPTIONS: DecorationOption[] = [

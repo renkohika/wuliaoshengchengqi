@@ -341,7 +341,18 @@ slide.addShape(pptx.ShapeType.roundRect, { x: 3.5, y: 5.3, w: 6.33, h: 1.4, fill
 slide.addText("期待与千岛团队深度合作", { x: 3.5, y: 5.5, w: 6.33, h: 0.6, fontSize: 13, bold: true, color: C.black, fontFace: "Microsoft YaHei", align: "center" });
 slide.addText("共同打造二次元创作者最爱的工具生态", { x: 3.5, y: 6.0, w: 6.33, h: 0.5, fontSize: 10, color: C.mid, fontFace: "Microsoft YaHei", align: "center" });
 
+// Add watermark to all slides
+pptx.slides.forEach((s) => {
+  s.addText("李心蕾面试用", {
+    x: 0, y: 3.2, w: 13.33, h: 1.0,
+    fontSize: 40, color: "CCCCCC", fontFace: "Microsoft YaHei",
+    align: "center", valign: "middle",
+    transparency: 60,
+    rotate: -25,
+  });
+});
+
 // Write file
 pptx.writeFile({ fileName: "product-intro.pptx" }).then(() => {
-  console.log("✓ product-intro.pptx generated successfully");
+  console.log("✓ product-intro.pptx generated successfully (with watermark)");
 });
