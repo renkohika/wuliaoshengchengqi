@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>千岛·吧唧无料生成器 - 产品介绍</title>
+<style>
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --border: #e8e8e8;
+  --border-hover: #d0d0d0;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b6b6b;
+  --text-tertiary: #999999;
+  --accent: #1a1a1a;
+  --accent-light: #f5f5f5;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  --shadow-hover: 0 2px 8px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Slides */
+.slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 60px 48px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.slide.active { opacity: 1; pointer-events: auto; }
+
+/* Typography */
+h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--text-primary); }
+h2 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text-primary); text-align: center; margin-bottom: 8px; }
+h3 { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.01em; color: var(--text-primary); margin-bottom: 8px; text-transform: uppercase; }
+p { font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); }
+.subtitle { font-size: 1.1rem; color: var(--text-secondary); text-align: center; margin-bottom: 40px; font-weight: 400; max-width: 560px; }
+.overline { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 16px; font-weight: 500; }
+
+/* Layout */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; width: 100%; max-width: 880px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; width: 100%; max-width: 960px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%; max-width: 960px; }
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.card:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+.card-featured {
+  background: var(--text-primary);
+  color: #fff;
+  border-color: transparent;
+}
+.card-featured h3, .card-featured p { color: #fff; }
+.card-featured p { opacity: 0.7; }
+
+/* Icon */
+.icon-box {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  background: var(--accent-light);
+}
+.icon-box svg { width: 20px; height: 20px; stroke: var(--text-primary); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Tags */
+.tag {
+  display: inline-block;
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 3px;
+  font-weight: 500;
+}
+
+/* Lists */
+ul { list-style: none; padding: 0; }
+li {
+  padding: 6px 0 6px 20px;
+  position: relative;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+li::before {
+  content: "";
+  position: absolute; left: 0; top: 13px;
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+}
+
+/* Metric */
+.metric { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text-primary); line-height: 1.1; }
+
+/* Flow */
+.flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 32px; }
+.flow-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.flow-arrow { color: var(--text-tertiary); font-size: 0.9rem; }
+
+/* Table */
+.table-wrap { width: 100%; max-width: 880px; overflow-x: auto; margin-top: 24px; }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th { padding: 12px 16px; text-align: left; font-weight: 500; color: var(--text-tertiary); border-bottom: 1px solid var(--border); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+td { padding: 12px 16px; border-bottom: 1px solid var(--accent-light); color: var(--text-secondary); }
+td:first-child { color: var(--text-primary); font-weight: 500; }
+.check { color: var(--text-primary); font-weight: 600; }
+.cross { color: var(--text-tertiary); }
+.partial { color: var(--text-tertiary); font-style: italic; }
+
+/* Navigation */
+.nav {
+  position: fixed; bottom: 32px; right: 32px;
+  display: flex; gap: 8px; z-index: 100;
+}
+.nav button {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.nav button:hover { border-color: var(--text-primary); box-shadow: var(--shadow-hover); }
+.page-num {
+  position: fixed; bottom: 38px; left: 32px;
+  font-size: 0.75rem; color: var(--text-tertiary);
+  z-index: 100; letter-spacing: 0.05em; font-weight: 500;
+}
+.progress {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: var(--text-primary);
+  z-index: 100;
+  transition: width 0.4s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slide { padding: 40px 24px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 12px; }
+  .card { padding: 20px; }
+  .metric { font-size: 2rem; }
+  .flow { gap: 6px; }
+  .flow-step { padding: 8px 12px; font-size: 0.8rem; }
+  .nav { bottom: 20px; right: 20px; }
+  .page-num { bottom: 26px; left: 20px; }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- SLIDE 1: Cover -->
+<div class="slide active">
+  <div style="text-align:center; max-width: 640px;">
+    <p class="overline">千岛 &times; 创作者工具</p>
+    <h1 style="margin-bottom: 20px;">吧唧无料生成器</h1>
+    <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 32px;">让每一位创作者，3分钟做出专业级吧唧设计</p>
+    <div style="margin-bottom: 48px;">
+      <span class="tag">千岛小程序</span>
+      <span class="tag">零门槛设计</span>
+      <span class="tag">AI智能抠图</span>
+      <span class="tag">多图层编辑</span>
+    </div>
+    <p style="color: var(--text-tertiary); font-size: 0.8rem; letter-spacing: 0.05em;">产品介绍 &middot; 2026</p>
+  </div>
+</div>
+
+<!-- SLIDE 2: Market -->
+<div class="slide">
+  <p class="overline">市场洞察</p>
+  <h2>背景与机会</h2>
+  <p class="subtitle">二次元同人经济蓬勃发展，吧唧是最核心的无料/周边品类，市场缺乏专业工具</p>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <div class="metric">4.9亿</div>
+      <p style="margin-top:8px; font-size: 0.85rem;">中国泛二次元用户</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="metric">80%</div>
+      <p style="margin-top:8px; font-size: 0.85rem;">吧唧占同人周边首选</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="metric">0</div>
+      <p style="margin-top:8px; font-size: 0.85rem;">专业吧唧设计工具</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: Pain Points -->
+<div class="slide">
+  <p class="overline">用户研究</p>
+  <h2>痛点分析</h2>
+  <p class="subtitle">创作者缺少适配移动端、低门槛且专为吧唧场景设计的工具</p>
+  <div class="grid-2" style="margin-top: 8px;">
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/></svg>
+      </div>
+      <h3>技能门槛高</h3>
+      <ul>
+        <li>需要 Photoshop 等专业软件</li>
+        <li>抠图、调色、排版需设计经验</li>
+        <li>大量创作者望而却步</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3>流程耗时</h3>
+      <ul>
+        <li>手动抠图+找素材+排版 = 2-3小时</li>
+        <li>调尺寸反复试错</li>
+        <li>多款式需重复劳动</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+      <h3>素材难寻</h3>
+      <ul>
+        <li>边框素材质量参差不齐</li>
+        <li>可爱风装饰散落各处</li>
+        <li>版权问题模糊</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3>工具不适配</h3>
+      <ul>
+        <li>通用工具不懂吧唧规格</li>
+        <li>无圆形预览+印刷标准</li>
+        <li>手机端体验差</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: Positioning -->
+<div class="slide">
+  <p class="overline">产品定位</p>
+  <h2>千岛生态内的一站式吧唧设计工具</h2>
+  <p class="subtitle">无需下载安装，无需设计技能，无需离开千岛</p>
+  <div class="card card-featured" style="max-width: 680px; text-align: center; padding: 40px 48px;">
+    <p style="font-size: 1.5rem; font-weight: 600; margin-bottom: 12px; opacity: 1;">
+      "打开即用，所见即所得"
+    </p>
+    <p style="font-size: 0.95rem;">
+      在熟悉的社区环境中，完成从灵感到成品的全流程
+    </p>
+  </div>
+  <div class="flow">
+    <div class="flow-step">千岛内打开</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">选底图/边框</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">上传·AI抠图</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">叠加装饰</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">导出/下单</div>
+  </div>
+</div>
+
+<!-- SLIDE 5: Features -->
+<div class="slide">
+  <p class="overline">产品能力</p>
+  <h2>核心功能</h2>
+  <p class="subtitle">从底图到导出，覆盖吧唧设计的每一步</p>
+  <div class="grid-3" style="margin-top: 4px;">
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      </div>
+      <h3>丰富底图库</h3>
+      <p>20+精选底图，支持自定义渐变色和上传自定义图片</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/></svg>
+      </div>
+      <h3>多样化边框</h3>
+      <p>SVG矢量 + PNG图片边框，可自定义颜色渐变</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M6 3h12l4 6-10 13L2 9z"/></svg>
+      </div>
+      <h3>AI 智能抠图</h3>
+      <p>本地端 AI 推理，一键去背景，隐私零泄露</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <h3>装饰叠加</h3>
+      <p>预设+自定义素材，可选图层位置（上/下）</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M5 9l7-7 7 7"/><path d="M12 2v14"/><path d="M19 15l-7 7-7-7"/></svg>
+      </div>
+      <h3>自由变换</h3>
+      <p>每层独立拖拽、双指缩放，精准调整</p>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3z"/><path d="M9 3v18"/><path d="M3 9h18"/></svg>
+      </div>
+      <h3>标准尺寸</h3>
+      <p>44/58/75mm 行业规格，圆形预览，导出即印</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: Tech -->
+<div class="slide">
+  <p class="overline">技术架构</p>
+  <h2>技术亮点</h2>
+  <p class="subtitle">纯前端架构，零后端成本，极致用户体验</p>
+  <div class="grid-2" style="margin-top: 4px;">
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h3>纯前端 · 零后端</h3>
+      <ul>
+        <li>React + TypeScript + Vite</li>
+        <li>所有计算在用户设备本地完成</li>
+        <li>图片永不上传服务器</li>
+        <li>边际运营成本趋近于零</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M20 12a8 8 0 0 0-8-8v8h8z" opacity="0.5"/></svg>
+      </div>
+      <h3>端侧 AI 推理</h3>
+      <ul>
+        <li>WebAssembly + ONNX Runtime</li>
+        <li>无网络延迟，离线可用</li>
+        <li>隐私数据零泄露风险</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3>小程序适配</h3>
+      <ul>
+        <li>响应式，全端适配</li>
+        <li>触屏手势原生支持</li>
+        <li>千岛 WebView 无缝嵌入</li>
+        <li>秒开，无加载等待</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <h3>极致体验</h3>
+      <ul>
+        <li>Canvas 智能裁剪透明边距</li>
+        <li>多图层独立 Transform 引擎</li>
+        <li>实时圆形预览 = 所见即所得</li>
+        <li>3x 高清导出</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: Users -->
+<div class="slide">
+  <p class="overline">目标受众</p>
+  <h2>用户画像</h2>
+  <p class="subtitle">千岛活跃用户，有表达欲，愿为爱好付费</p>
+  <div class="grid-4" style="margin-top: 4px;">
+    <div class="card" style="text-align:center;">
+      <div class="icon-box" style="margin: 0 auto 16px;">
+        <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+      </div>
+      <h3>同人画手</h3>
+      <p style="font-size: 0.82rem;">作品做成吧唧送粉丝/出摊</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="icon-box" style="margin: 0 auto 16px;">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h3>追星/谷圈</h3>
+      <p style="font-size: 0.82rem;">推图做应援吧唧，漫展交换</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="icon-box" style="margin: 0 auto 16px;">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>新手创作者</h3>
+      <p style="font-size: 0.82rem;">无PS技能，有创作热情</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="icon-box" style="margin: 0 auto 16px;">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h3>漫展摊主</h3>
+      <p style="font-size: 0.82rem;">批量快速出多款设计稿</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: Ecosystem -->
+<div class="slide">
+  <p class="overline">生态价值</p>
+  <h2>千岛协同</h2>
+  <p class="subtitle">工具即内容，内容即增长</p>
+  <div class="grid-2" style="margin-top: 4px;">
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <h3>平台价值</h3>
+      <ul>
+        <li>提升停留时长和活跃度</li>
+        <li>创作工具 → 内容产出 → 互动闭环</li>
+        <li>差异化竞争壁垒</li>
+        <li>电商/印刷变现入口</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <h3>用户价值</h3>
+      <ul>
+        <li>不离开千岛完成全流程</li>
+        <li>社区内直接分享成果</li>
+        <li>发现他人设计灵感</li>
+        <li>未来可社区内交易/交换</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flow">
+    <div class="flow-step">社区看到美图</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">打开小程序制作</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">分享到动态</div>
+    <span class="flow-arrow">&rarr;</span>
+    <div class="flow-step">引发更多使用</div>
+  </div>
+</div>
+
+<!-- SLIDE 9: Growth -->
+<div class="slide">
+  <p class="overline">增长策略</p>
+  <h2>推广路径</h2>
+  <p class="subtitle">四阶段渐进式增长，从冷启动到规模化变现</p>
+  <div class="grid-2" style="margin-top: 4px;">
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+      </div>
+      <h3>Phase 1 · 冷启动（1-2月）</h3>
+      <ul>
+        <li>千岛站内 Banner 推荐位</li>
+        <li>邀请50位头部太太内测</li>
+        <li>使用教程短视频</li>
+        <li>「晒出你的第一个吧唧」活动</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <h3>Phase 2 · 增长（2-4月）</h3>
+      <ul>
+        <li>作品水印标识 → 自然裂变</li>
+        <li>千岛话题挑战赛</li>
+        <li>漫展现场扫码体验</li>
+        <li><b>小红书</b> — 教程笔记投放</li>
+        <li><b>B站</b> — 联动UP主测评</li>
+        <li><b>微博</b> — 超话/太太圈扩散</li>
+        <li><b>LOFTER</b> — 同人圈精准触达</li>
+        <li><b>抖音</b> — 短视频视觉冲击</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Phase 3 · 留存（4-6月）</h3>
+      <ul>
+        <li>每周更新主题素材包</li>
+        <li>创作者素材投稿计划</li>
+        <li>等级体系+专属素材解锁</li>
+        <li>社区内交换/赠送功能</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h3>Phase 4 · 变现（6月+）</h3>
+      <ul>
+        <li>「一键购买」对接合作印厂</li>
+        <li>高级素材包付费（¥9.9起）</li>
+        <li>IP联名限定素材</li>
+        <li>创作者素材商店（平台抽成）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10: Metrics -->
+<div class="slide">
+  <p class="overline">里程碑</p>
+  <h2>阶段目标</h2>
+  <p class="subtitle">清晰的增长预期与核心指标</p>
+  <div class="grid-3" style="margin-top: 4px;">
+    <div class="card" style="text-align:center;">
+      <p style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">上线 1 个月</p>
+      <div class="metric">5,000</div>
+      <p style="margin-top: 8px;">累计用户</p>
+      <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-top: 4px;">日活 500+</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">上线 3 个月</p>
+      <div class="metric">3万</div>
+      <p style="margin-top: 8px;">累计用户</p>
+      <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-top: 4px;">日活 2,000+</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <p style="font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em;">上线 6 个月</p>
+      <div class="metric">10万+</div>
+      <p style="margin-top: 8px;">累计用户</p>
+      <p style="color: var(--text-tertiary); font-size: 0.8rem; margin-top: 4px;">月活 3万+ · 付费率 3%</p>
+    </div>
+  </div>
+  <div class="card card-featured" style="max-width: 680px; margin-top: 28px; text-align:center; padding: 24px 32px;">
+    <p style="font-size: 0.9rem; opacity: 1; font-weight: 500;">设计完成率 &gt; 60% &nbsp;&middot;&nbsp; 7日留存 &gt; 35% &nbsp;&middot;&nbsp; 分享率 &gt; 20%</p>
+  </div>
+</div>
+
+<!-- SLIDE 11: Competition -->
+<div class="slide">
+  <p class="overline">竞争分析</p>
+  <h2>竞品对比</h2>
+  <p class="subtitle">唯一深耕吧唧场景的设计工具</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th style="color: var(--text-primary);">本产品</th>
+          <th>Canva</th>
+          <th>美图秀秀</th>
+          <th>Photoshop</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>吧唧专用模板</td><td class="check">&#10003;</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td></tr>
+        <tr><td>圆形实时预览</td><td class="check">&#10003;</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="partial">手动</td></tr>
+        <tr><td>AI 本地抠图</td><td class="check">&#10003;</td><td class="partial">云端</td><td class="partial">云端</td><td class="cross">&mdash;</td></tr>
+        <tr><td>隐私保护</td><td class="check">&#10003; 纯本地</td><td class="cross">上传云端</td><td class="cross">上传云端</td><td class="check">&#10003;</td></tr>
+        <tr><td>学习成本</td><td class="check">零</td><td class="partial">低</td><td class="partial">低</td><td class="cross">极高</td></tr>
+        <tr><td>千岛生态集成</td><td class="check">&#10003;</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td></tr>
+        <tr><td>手机操作体验</td><td class="check">优秀</td><td class="partial">一般</td><td class="check">好</td><td class="cross">不可用</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- SLIDE 12: End -->
+<div class="slide">
+  <div style="text-align: center; max-width: 600px;">
+    <p class="overline">Thank you</p>
+    <h1 style="margin-bottom: 16px;">吧唧无料生成器</h1>
+    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 40px;">让创作没有门槛，让热爱触手可及</p>
+    <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px;">
+      <span class="tag">产品已上线 MVP</span>
+      <span class="tag">纯前端零运维</span>
+      <span class="tag">千岛生态独家</span>
+    </div>
+    <div class="card" style="display: inline-block; padding: 24px 40px; text-align: center;">
+      <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 4px;">期待与千岛团队深度合作</p>
+      <p style="font-size: 0.85rem;">共同打造二次元创作者最爱的工具生态</p>
+    </div>
+  </div>
+</div>
+
+<!-- Navigation -->
+<div class="page-num"><span id="current">01</span> / <span id="total">12</span></div>
+<div class="nav">
+  <button onclick="prev()" aria-label="Previous">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
+  <button onclick="next()" aria-label="Next">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let cur = 0;
+const total = slides.length;
+document.getElementById('total').textContent = String(total).padStart(2, '0');
+const bar = document.getElementById('progress');
+
+function show(n) {
+  slides[cur].classList.remove('active');
+  cur = (n + total) % total;
+  slides[cur].classList.add('active');
+  document.getElementById('current').textContent = String(cur + 1).padStart(2, '0');
+  bar.style.width = ((cur + 1) / total * 100) + '%';
+}
+function next() { show(cur + 1); }
+function prev() { show(cur - 1); }
+bar.style.width = (1 / total * 100) + '%';
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+let tx = 0;
+document.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; });
+document.addEventListener('touchend', (e) => {
+  const d = e.changedTouches[0].clientX - tx;
+  if (Math.abs(d) > 50) { d < 0 ? next() : prev(); }
+});
+</script>
+</body>
+</html>

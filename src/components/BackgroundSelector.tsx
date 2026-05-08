@@ -52,7 +52,7 @@ export function BackgroundSelector({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        <label className="text-sm font-medium tracking-wide text-muted-foreground">
           底图
         </label>
         <div className="flex bg-secondary rounded-md p-0.5 text-[11px]">

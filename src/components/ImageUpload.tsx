@@ -58,7 +58,7 @@ export function ImageUpload({
 
   return (
     <div className="space-y-3">
-      <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <label className="text-sm font-medium tracking-wide text-muted-foreground">
         照片
       </label>
 

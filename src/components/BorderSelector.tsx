@@ -98,7 +98,7 @@ export function BorderSelector({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+        <label className="text-sm font-medium tracking-wide text-muted-foreground">
           边框 & 装饰
         </label>
         {/* Tab 切换 */}

@@ -55,9 +55,9 @@ function App() {
         </div>
       </header>
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-4 sm:px-6 py-6 sm:py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 lg:gap-12">
-          <div className="flex flex-col items-center justify-center min-h-[360px] lg:min-h-[480px] rounded-xl bg-card border border-border p-8 lg:p-12">
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 sm:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_420px] gap-6 md:gap-8">
+          <div className="flex flex-col items-center justify-center min-h-[320px] md:min-h-[440px] rounded-xl bg-card border border-border p-6 md:p-8">
             <BadgePreview
               config={config}
               previewRef={previewRef}

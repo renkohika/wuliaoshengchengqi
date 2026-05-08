@@ -9,7 +9,7 @@ interface SizeSelectorProps {
 export function SizeSelector({ selected, onSelect }: SizeSelectorProps) {
   return (
     <div className="space-y-3">
-      <label className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+      <label className="text-sm font-medium tracking-wide text-muted-foreground">
         尺寸
       </label>
       <div className="flex gap-2">
@@ -18,7 +18,7 @@ export function SizeSelector({ selected, onSelect }: SizeSelectorProps) {
             key={size.mm}
             onClick={() => onSelect(size)}
             className={cn(
-              "flex-1 py-2 rounded-lg text-xs font-medium transition-all duration-200",
+              "flex-1 py-2 rounded-lg text-sm font-medium transition-all duration-200",
               selected.mm === size.mm
                 ? "bg-primary text-primary-foreground"
                 : "bg-secondary text-secondary-foreground hover:bg-accent"

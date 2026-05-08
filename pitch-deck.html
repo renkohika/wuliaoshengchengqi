@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吧唧无料生成器 - 商业融资演示</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f1a; color: #fff; overflow: hidden; }
+.deck { width: 100vw; height: 100vh; position: relative; }
+.slide { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 80px; opacity: 0; pointer-events: none; transition: opacity 0.5s ease; }
+.slide.active { opacity: 1; pointer-events: auto; }
+.slide h1 { font-size: 3.2em; font-weight: 800; margin-bottom: 0.3em; background: linear-gradient(135deg, #7c3aed, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-align: center; }
+.slide h2 { font-size: 2.2em; font-weight: 700; margin-bottom: 0.6em; color: #e2e8f0; text-align: center; }
+.slide h3 { font-size: 1.4em; font-weight: 600; color: #a78bfa; margin-bottom: 0.4em; }
+.slide p, .slide li { font-size: 1.15em; line-height: 1.8; color: #cbd5e1; }
+.slide ul { list-style: none; padding: 0; }
+.slide li { padding: 8px 0; padding-left: 28px; position: relative; }
+.slide li::before { content: "→"; position: absolute; left: 0; color: #7c3aed; font-weight: bold; }
+.subtitle { font-size: 1.3em; color: #94a3b8; margin-top: 0.5em; text-align: center; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; max-width: 1000px; margin-top: 20px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; width: 100%; max-width: 1100px; margin-top: 20px; }
+.card { background: rgba(124, 58, 237, 0.08); border: 1px solid rgba(124, 58, 237, 0.25); border-radius: 16px; padding: 28px; }
+.card h3 { margin-bottom: 12px; }
+.highlight { color: #a78bfa; font-weight: 600; }
+.big-number { font-size: 3em; font-weight: 800; color: #7c3aed; margin-bottom: 4px; }
+.tag { display: inline-block; background: rgba(124, 58, 237, 0.2); border: 1px solid rgba(124, 58, 237, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 0.85em; color: #c4b5fd; margin: 4px; }
+.nav { position: fixed; bottom: 30px; right: 40px; display: flex; gap: 12px; z-index: 100; }
+.nav button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); background: rgba(15,15,26,0.8); color: #fff; font-size: 1.2em; cursor: pointer; backdrop-filter: blur(8px); }
+.nav button:hover { border-color: #7c3aed; background: rgba(124,58,237,0.2); }
+.page-indicator { position: fixed; bottom: 36px; left: 40px; font-size: 0.85em; color: #64748b; z-index: 100; }
+.timeline { display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 800px; }
+.timeline-item { display: flex; align-items: flex-start; gap: 16px; }
+.timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: #7c3aed; margin-top: 8px; flex-shrink: 0; }
+.timeline-content { flex: 1; }
+.revenue-bar { height: 28px; background: linear-gradient(90deg, #7c3aed, #ec4899); border-radius: 14px; margin: 8px 0; display: flex; align-items: center; padding-left: 12px; font-size: 0.85em; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- Slide 1: 封面 -->
+<div class="slide active">
+  <h1>吧唧无料生成器</h1>
+  <p class="subtitle">二次元粉丝经济新基建 · 让每个太太都能轻松出无料</p>
+  <div style="margin-top: 40px;">
+    <span class="tag">SaaS工具</span>
+    <span class="tag">二次元经济</span>
+    <span class="tag">UGC平台</span>
+    <span class="tag">千岛生态</span>
+  </div>
+  <p style="margin-top: 40px; color: #64748b; font-size: 0.9em;">2026 · 种子轮融资路演</p>
+</div>
+
+<!-- Slide 2: 痛点 -->
+<div class="slide">
+  <h2>市场痛点</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>创作者痛点</h3>
+      <ul>
+        <li>出无料需要 PS 技能，门槛高</li>
+        <li>找素材、调边框、排版耗时 2-3 小时</li>
+        <li>成品质量参差，印刷翻车率高</li>
+        <li>小透明没预算请设计师</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>市场现状</h3>
+      <ul>
+        <li>无专业吧唧设计工具存在</li>
+        <li>Canva/美图秀秀不懂二次元需求</li>
+        <li>圈内靠口口相传 PSD 模板</li>
+        <li>印厂对接流程不透明</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3: 解决方案 -->
+<div class="slide">
+  <h2>我们的解决方案</h2>
+  <p class="subtitle" style="margin-bottom: 30px;">3分钟生成专业级吧唧设计稿，零设计基础可用</p>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <div class="big-number">🎨</div>
+      <h3>可视化编辑</h3>
+      <p>底图/边框/素材/照片<br>多图层自由叠加</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="big-number">✂️</div>
+      <h3>AI智能抠图</h3>
+      <p>本地运行无需上传<br>一键去除背景</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="big-number">📱</div>
+      <h3>触屏友好</h3>
+      <p>双指缩放拖拽<br>手机即可完成设计</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4: 产品优势 -->
+<div class="slide">
+  <h2>核心竞争力</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>技术壁垒</h3>
+      <ul>
+        <li>客户端AI抠图（@imgly/background-removal）</li>
+        <li>用户数据不上传服务器，隐私安全</li>
+        <li>纯前端架构，边际成本趋近于零</li>
+        <li>多图层 Transform 引擎，流畅交互</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>圈层壁垒</h3>
+      <ul>
+        <li>深度理解二次元吧唧/无料文化</li>
+        <li>预设素材库持续扩充（像素风、Y2K等）</li>
+        <li>与千岛社区深度绑定</li>
+        <li>太太们的口碑自传播效应</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: 商业模式 -->
+<div class="slide">
+  <h2>商业模式</h2>
+  <div class="grid-3">
+    <div class="card" style="text-align:center;">
+      <h3>免费增值</h3>
+      <p>基础功能永久免费<br>付费解锁高级素材包<br>独家边框/装饰素材</p>
+      <p style="margin-top:12px;"><span class="highlight">¥9.9-29.9/素材包</span></p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3>一键印刷</h3>
+      <p>对接合作印厂<br>设计稿直连下单<br>赚取印刷佣金</p>
+      <p style="margin-top:12px;"><span class="highlight">15-25% 佣金</span></p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h3>品牌合作</h3>
+      <p>IP联名素材包<br>漫展摊位推广<br>创作者分成</p>
+      <p style="margin-top:12px;"><span class="highlight">B端定制收入</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 6: 市场规模 -->
+<div class="slide">
+  <h2>市场规模</h2>
+  <div class="grid-2">
+    <div class="card" style="text-align:center;">
+      <div class="big-number">4.9亿</div>
+      <p>中国二次元用户（2025）</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="big-number">230亿</div>
+      <p>中国动漫周边市场规模</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="big-number">1200万+</div>
+      <p>每年漫展参展人次</p>
+    </div>
+    <div class="card" style="text-align:center;">
+      <div class="big-number">80%</div>
+      <p>吧唧占同人周边品类份额</p>
+    </div>
+  </div>
+  <p style="margin-top: 24px; color: #64748b;">数据来源：艾瑞咨询、同人经济白皮书</p>
+</div>
+
+<!-- Slide 7: 增长策略 -->
+<div class="slide">
+  <h2>推广增长策略</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Phase 1（0-3月）：种子用户冷启动</h3>
+        <p>千岛/LOFTER/微博太太圈定向推广 → 漫展现场扫码体验 → KOL试用分享</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Phase 2（3-6月）：社区裂变</h3>
+        <p>「用本工具设计的作品」水印/标识引流 → 素材投稿激励计划 → 创作者等级体系</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Phase 3（6-12月）：商业化加速</h3>
+        <p>上线印刷下单功能 → 签约5家优质印厂 → 推出月度订阅制素材库 → IP联名合作首单</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Phase 4（12月+）：生态扩展</h3>
+        <p>拓展亚克力立牌/色纸/明信片品类 → 开放创作者素材商店（平台抽成）→ 海外版本</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 8: 收入预测 -->
+<div class="slide">
+  <h2>收入预测</h2>
+  <div style="width: 100%; max-width: 700px;">
+    <div style="margin-bottom: 20px;">
+      <p style="margin-bottom: 4px;">2026 Q3-Q4（验证期）</p>
+      <div class="revenue-bar" style="width: 15%;">5万</div>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p style="margin-bottom: 4px;">2027 H1（增长期）</p>
+      <div class="revenue-bar" style="width: 35%;">30万</div>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p style="margin-bottom: 4px;">2027 H2（商业化期）</p>
+      <div class="revenue-bar" style="width: 60%;">80万</div>
+    </div>
+    <div style="margin-bottom: 20px;">
+      <p style="margin-bottom: 4px;">2028（规模化）</p>
+      <div class="revenue-bar" style="width: 100%;">300万+</div>
+    </div>
+  </div>
+  <p style="margin-top: 16px; color: #64748b; font-size: 0.9em;">基于 10万用户 × 3%付费率 × ARPU ¥100/年 保守估计</p>
+</div>
+
+<!-- Slide 9: 融资需求 -->
+<div class="slide">
+  <h2>融资需求</h2>
+  <div class="grid-2">
+    <div class="card" style="text-align:center;">
+      <div class="big-number">50万</div>
+      <p>种子轮融资金额</p>
+      <p style="margin-top: 8px; color: #64748b; font-size: 0.9em;">出让 8-12% 股权</p>
+    </div>
+    <div class="card">
+      <h3>资金用途</h3>
+      <ul>
+        <li>产品研发迭代（40%）：多素材叠加、印刷对接</li>
+        <li>市场推广（35%）：KOL合作、漫展投放</li>
+        <li>素材版权采购（15%）：IP联名素材库</li>
+        <li>运营储备（10%）：服务器、人力</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 10: 团队 & 结尾 -->
+<div class="slide">
+  <h2>为什么是我们</h2>
+  <div class="card" style="max-width: 700px; margin-bottom: 30px;">
+    <ul>
+      <li>独立开发者，全栈技术能力，快速迭代</li>
+      <li>深度二次元圈层用户，理解太太真实需求</li>
+      <li>产品已上线可用（MVP已验证）</li>
+      <li>纯前端架构 = 极低运营成本</li>
+      <li>千岛生态首发合作意向</li>
+    </ul>
+  </div>
+  <h1 style="font-size: 2em; margin-top: 20px;">让每个太太都能做出心仪的吧唧 ♡</h1>
+  <p style="margin-top: 20px; color: #64748b;">联系我们 · 期待与您的合作</p>
+</div>
+
+</div>
+
+<!-- Navigation -->
+<div class="page-indicator"><span id="current">1</span> / <span id="total">10</span></div>
+<div class="nav">
+  <button onclick="prev()">←</button>
+  <button onclick="next()">→</button>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+const total = slides.length;
+document.getElementById('total').textContent = total;
+
+function showSlide(n) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (n + total) % total;
+  slides[currentSlide].classList.add('active');
+  document.getElementById('current').textContent = currentSlide + 1;
+}
+function next() { showSlide(currentSlide + 1); }
+function prev() { showSlide(currentSlide - 1); }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+});
+
+// Touch swipe support
+let touchStartX = 0;
+document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+document.addEventListener('touchend', (e) => {
+  const diff = e.changedTouches[0].clientX - touchStartX;
+  if (Math.abs(diff) > 50) { diff < 0 ? next() : prev(); }
+});
+</script>
+</body>
+</html>
