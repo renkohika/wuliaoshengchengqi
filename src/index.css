@@ -27,13 +27,17 @@
 
 @layer base {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-base;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+/* Override Tailwind text-xs/text-sm to be larger */
+.text-xs { font-size: 0.8125rem !important; } /* 13px */
+.text-sm { font-size: 0.9375rem !important; } /* 15px */
