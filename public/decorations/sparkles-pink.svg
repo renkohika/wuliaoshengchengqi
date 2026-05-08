@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- 闪闪星星散布 -->
+  <!-- 大星 -->
+  <path d="M32 8 L34 18 L44 20 L34 22 L32 32 L30 22 L20 20 L30 18Z" fill="#FFB3D9"/>
+  <!-- 中星 -->
+  <path d="M48 32 L49.5 37 L54 38 L49.5 39 L48 44 L46.5 39 L42 38 L46.5 37Z" fill="#FFCDD9"/>
+  <!-- 小星 -->
+  <path d="M16 36 L17 39 L20 40 L17 41 L16 44 L15 41 L12 40 L15 39Z" fill="#FFD6E8"/>
+  <!-- 小星2 -->
+  <path d="M24 48 L25 51 L28 52 L25 53 L24 56 L23 53 L20 52 L23 51Z" fill="#FFE0F0"/>
+  <!-- 小星3 -->
+  <path d="M44 50 L45 52 L47 53 L45 54 L44 56 L43 54 L41 53 L43 52Z" fill="#FFCDD9"/>
+  <!-- 小圆点装饰 -->
+  <circle cx="12" cy="16" r="2" fill="#FFD6E8"/>
+  <circle cx="52" cy="12" r="1.5" fill="#FFCDD9"/>
+  <circle cx="8" cy="48" r="1.5" fill="#FFE0F0"/>
+  <circle cx="56" cy="44" r="2" fill="#FFD6E8"/>
+</svg>

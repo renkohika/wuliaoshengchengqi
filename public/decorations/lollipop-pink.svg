@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- 像素棒棒糖 - 粉色螺旋 -->
+  <circle cx="28" cy="24" r="14" fill="#FFD6E8"/>
+  <path d="M28 10 C35 10, 42 17, 42 24 C42 28, 40 31, 37 33" fill="none" stroke="#FFB3D9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 14 C33 14, 38 19, 38 24 C38 27, 36 29, 34 30" fill="none" stroke="#FF8AC4" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="28" cy="24" r="4" fill="#FF8AC4"/>
+  <!-- 棍子 -->
+  <rect x="27" y="38" width="3" height="18" rx="1.5" fill="#FFB3D9"/>
+  <rect x="25" y="55" width="7" height="3" rx="1.5" fill="#FF8AC4"/>
+</svg>

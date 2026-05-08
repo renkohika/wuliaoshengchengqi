@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- 像素星星 - 蓝色 -->
+  <rect x="28" y="4" width="8" height="8" fill="#60A5FA"/>
+  <rect x="28" y="12" width="8" height="8" fill="#60A5FA"/>
+  <rect x="4" y="24" width="8" height="8" fill="#60A5FA"/>
+  <rect x="12" y="24" width="8" height="8" fill="#60A5FA"/>
+  <rect x="20" y="24" width="8" height="8" fill="#93C5FD"/>
+  <rect x="28" y="24" width="8" height="8" fill="#93C5FD"/>
+  <rect x="36" y="24" width="8" height="8" fill="#93C5FD"/>
+  <rect x="44" y="24" width="8" height="8" fill="#60A5FA"/>
+  <rect x="52" y="24" width="8" height="8" fill="#60A5FA"/>
+  <rect x="12" y="32" width="8" height="8" fill="#60A5FA"/>
+  <rect x="20" y="32" width="8" height="8" fill="#60A5FA"/>
+  <rect x="28" y="32" width="8" height="8" fill="#60A5FA"/>
+  <rect x="36" y="32" width="8" height="8" fill="#60A5FA"/>
+  <rect x="44" y="32" width="8" height="8" fill="#60A5FA"/>
+  <rect x="20" y="40" width="8" height="8" fill="#60A5FA"/>
+  <rect x="28" y="40" width="8" height="8" fill="#60A5FA"/>
+  <rect x="36" y="40" width="8" height="8" fill="#60A5FA"/>
+  <rect x="16" y="48" width="8" height="8" fill="#60A5FA"/>
+  <rect x="24" y="48" width="8" height="8" fill="#60A5FA"/>
+  <rect x="36" y="48" width="8" height="8" fill="#60A5FA"/>
+  <rect x="44" y="48" width="8" height="8" fill="#60A5FA"/>
+  <rect x="8" y="56" width="8" height="8" fill="#60A5FA"/>
+  <rect x="48" y="56" width="8" height="8" fill="#60A5FA"/>
+</svg>

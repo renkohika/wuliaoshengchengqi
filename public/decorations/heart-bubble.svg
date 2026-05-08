@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- 粉色爱心通知气泡 -->
+  <rect x="8" y="12" width="48" height="36" rx="8" fill="#FFD6E8"/>
+  <rect x="12" y="16" width="40" height="28" rx="6" fill="#FFEBF2"/>
+  <!-- 尖角 -->
+  <polygon points="20,48 28,48 24,56" fill="#FFD6E8"/>
+  <!-- 爱心 -->
+  <path d="M32 26 C32 22, 28 20, 26 22 C24 24, 24 28, 32 34 C40 28, 40 24, 38 22 C36 20, 32 22, 32 26Z" fill="#FF8AC4"/>
+  <!-- 高光 -->
+  <circle cx="28" cy="24" r="1.5" fill="white" opacity="0.5"/>
+</svg>
